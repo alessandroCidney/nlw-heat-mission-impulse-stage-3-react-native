@@ -9,6 +9,7 @@ export function Header () {
 
   return (
     <View style={styles.container}>
+      <LogoSvg />
       <Text>Sair</Text>
     </View>
   );
