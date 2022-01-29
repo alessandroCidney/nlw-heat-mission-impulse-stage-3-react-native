@@ -4,18 +4,36 @@ import { UserPhoto } from "../UserPhoto";
 
 import { styles } from './styles';
 
-export function Message () {
+export type TMessageProps = {
+  id: string;
+  text: string;
+  user: {
+    name: string;
+    avatar_url: string;
+  }
+};
+
+type TProps = {
+  data: TMessageProps;
+};
+
+export function Message ({ data }: TProps) {
   
   return (
     <View style={styles.container}>
       <Text style={styles.message}>
-        Texto da mensagem
+        { data.text }
       </Text>
 
-      <View>
-        <UserPhoto sizes="SMALL" imageUri="https://github.com/alessandroCidney.png" />
+      <View style={styles.footer}>
+        <UserPhoto
+          sizes="SMALL"
+          imageUri={data.user.avatar_url}
+        />
 
-        <Text style={styles.userName}>Nome do usuário</Text>
+        <Text style={styles.userName}>
+          { data.user.name }
+        </Text>
       </View>
     </View>
   );
