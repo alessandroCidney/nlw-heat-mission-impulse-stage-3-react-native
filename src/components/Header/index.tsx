@@ -12,13 +12,15 @@ export function Header () {
     <View style={styles.container}>
       <LogoSvg />
 
-      <UserPhoto
-        imageUri="https://github.com/alessandroCidney.png"
-      />
+      <View style={styles.logoutButton}>
+        <TouchableOpacity>
+          <Text style={styles.logoutText}>Sair</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Text style={styles.logoutText}>Sair</Text>
-      </TouchableOpacity>
+        <UserPhoto
+          imageUri="https://github.com/alessandroCidney.png"
+        />
+      </View>
     </View>
   );
 };
