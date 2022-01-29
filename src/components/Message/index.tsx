@@ -2,6 +2,8 @@ import React from "react";
 import { Text, View } from "react-native";
 import { UserPhoto } from "../UserPhoto";
 
+import { MotiView } from 'moti';
+
 import { styles } from './styles';
 
 export type TMessageProps = {
@@ -20,7 +22,12 @@ type TProps = {
 export function Message ({ data }: TProps) {
   
   return (
-    <View style={styles.container}>
+    <MotiView
+      from={{ opacity: 0, translateY: -50 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{ type: 'timing', duration: 700 }}
+      style={styles.container}
+    >
       <Text style={styles.message}>
         { data.text }
       </Text>
@@ -35,6 +42,6 @@ export function Message ({ data }: TProps) {
           { data.user.name }
         </Text>
       </View>
-    </View>
+    </MotiView>
   );
 };
