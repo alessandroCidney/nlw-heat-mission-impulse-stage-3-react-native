@@ -3,6 +3,7 @@
     "name": "stage3-reactnative",
     "slug": "stage3-reactnative",
     "version": "1.0.0",
+    "scheme": "stage3-reactnative",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
